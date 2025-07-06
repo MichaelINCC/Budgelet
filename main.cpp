@@ -49,17 +49,18 @@ class deck{
   string decks;
   string userInput;
   string deckName;
-
-
-  int cardNumber;
+  static int deckNumber;
 
 
     void creationOfDeck(flashCards& myCards) {
       cin.ignore();
       cout << "What would you like the name of this deck to be called?\n";
       getline(cin,deckName);
-      cout <<"The deck name: "<< deckName <<"  Is this correct? If so input a Y. If this is incorrect please enter N to clear and restart."<< endl;
+      
+      cout <<"The deck name: " << deckName << "  Is this correct? If so input a Y. If this is incorrect please enter N to clear and restart."<< endl;
       cin >> affirmation;
+      vector<string> deckCollections;
+      deckCollections.push_back(deckName);
       cout<< endl;
     bool isConfirmed;
         
@@ -82,12 +83,17 @@ class deck{
         }
       }
     };
-class deckCollections{
-private:
+class deckCollections {
+private: vector<string> deckNameLibrary;
 public:
-};
+void addDeckName(const string & name){
+    deckNameLibrary.push_back(name);
+}};
+
+//Beginning of Main
 int main()
-{{
+{
+  deckCollections myDeckLibrary;
   int choice;
   flashCards myCards;
     cout << "Welcome to Budgelet.This initial build is going to just prompt you for card creation, opening of a prexisting set, or account creation. "<< endl;
@@ -99,7 +105,6 @@ int main()
 if (choice == 1)
 {
   deck myDeck;
-  myDeck.creationOfDeck(myCards);
+ myDeck.creationOfDeck(myCards);
 }
-return 0;
-}}
+}
