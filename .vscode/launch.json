@@ -5,7 +5,7 @@
       "name": "C++ Launch",
       "type": "cppdbg",
       "request": "launch",
-      "program": "${workspaceFolder}/main",     // ⚠️ Output binary
+      "program": "${workspaceFolder}/main",     
       "args": [],
       "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
@@ -19,8 +19,8 @@
           "ignoreFailures": true
         }
       ],
-      "preLaunchTask": "build",                 // Optional: task to run before debugging
-      "miDebuggerPath": "/usr/bin/gdb"          // Confirm path with `which gdb`
+      "preLaunchTask": "build",
+      "miDebuggerPath": "/usr/bin/gdb"
     }
   ]
 }

@@ -55,6 +55,7 @@ class deck{
 
 
     void creationOfDeck(flashCards& myCards) {
+      cin.ignore();
       cout << "What would you like the name of this deck to be called?\n";
       getline(cin,deckName);
       cout <<"The deck name: "<< deckName <<"  Is this correct? If so input a Y. If this is incorrect please enter N to clear and restart."<< endl;
@@ -81,6 +82,10 @@ class deck{
         }
       }
     };
+class deckCollections{
+private:
+public:
+};
 int main()
 {{
   int choice;
