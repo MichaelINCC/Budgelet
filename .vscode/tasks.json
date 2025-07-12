@@ -2,53 +2,20 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "build",                 // This name must match the one referenced in launch.json
+      "label": "build",                 
       "type": "shell",
       "command": "g++",
       "args": [
-        "-g",                           // For debugging
-        "main.cpp",                     // Your source file
+        "-g",                           
+        "main.cpp",                     
         "-o",
-        "main"                          // The name of the executable
+        "main"                          
       ],
       "group": {
         "kind": "build",
         "isDefault": true
       },
       "problemMatcher": ["$gcc"]
-    }
-  ]
-}
-Make sure this file is located at:
-/.vscode/tasks.json
-
-2. Create or update .vscode/launch.json
-This tells the debugger how to launch your program.
-
-json
-Copy
-Edit
-{
-  "version": "0.2.0",
-  "configurations": [
-    {
-      "name": "Launch Budgelet",
-      "type": "cppdbg",
-      "request": "launch",
-      "program": "${workspaceFolder}/main",   // This must match the output in tasks.json
-      "args": [],
-      "stopAtEntry": false,
-      "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": false,
-      "MIMode": "gdb",
-      "setupCommands": [
-        {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-        }
-      ]
     }
   ]
 }
