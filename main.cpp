@@ -96,7 +96,7 @@ class flashCards
               frontSideOfCard.clear();
               backSideofCard.clear();
               cin.ignore();
-              cardCreationPortion;
+              cardCreationPortion();
             
           }
         }
@@ -130,7 +130,12 @@ class deck{
 
     void creationOfDeck(flashCards& myCards) {
       cin.ignore();
-      cout << "What would you like the name of this deck to be called?\n";
+
+      while (true)
+      {
+        /* code */
+      
+        cout << "What would you like the name of this deck to be called?\n";
       getline(cin,deckName);
       
       cout <<"The deck name: " << deckName << "  Is this correct? If so input a Y. If this is incorrect please enter N to clear and restart."<< endl;
@@ -151,7 +156,7 @@ class deck{
       { myCards.cardCreationPortion();}
             
     else if(affirmation == 'n' || affirmation == 'N'){
-            cout <<"No problem!Let's begin the deck creation process again."<< endl;
+            cout <<"No problem ! Let's begin the deck creation process again."<< endl;
             deckName.clear();
             cin.ignore();
             creationOfDeck(myCards);
@@ -173,15 +178,27 @@ private: vector<string> deckNameLibrary;
     for (int i = 0; i < deckNameLibrary.size(); ++i)
       { 
         deckIndex[deckNameLibrary[i]].push_back(i);
-      
       }
-      return deckIndex;
-    };
+       return deckIndex;
+    }
+};
+class accountCreation
+  {
+    private:
+      string username;
+      string password;
+      string secretAnswer1;
+      string secretAnswer2;
+      
+    public:
+  
+  };
+
 
 //Beginning of Main
 int main()
 {
-  deckCollections myDeckLibrary;
+  myDeckCollection.myDeckLibrary;
   int choice;
   flashCards myCards;
     cout << "Welcome to Budgelet.This initial build is going to just prompt you for card creation, opening of a prexisting set, or account creation. "<< endl;
