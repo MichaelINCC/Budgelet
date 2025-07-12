@@ -133,9 +133,10 @@ class deck{
 
       while (true)
       {
-        /* code */
+        cin.ignore();
       
         cout << "What would you like the name of this deck to be called?\n";
+        cin.ignore();
       getline(cin,deckName);
       
       cout <<"The deck name: " << deckName << "  Is this correct? If so input a Y. If this is incorrect please enter N to clear and restart."<< endl;
@@ -167,19 +168,15 @@ class deck{
     class deckCollections {
 private: vector<string> deckNameLibrary;
   public:
-  
-    void addDeckName(const string & name)
-    {
+    void addDeckName(const string & name){
      deckNameLibrary.push_back(name);
     }
-     unordered_map<string,vector<int>> deckBuildIndex;
+     unordered_map<string,vector<int>> deckBuildIndex(){
         unordered_map<string,vector<int>>deckIndex;
-        
-    for (int i = 0; i < deckNameLibrary.size(); ++i)
-      { 
-        deckIndex[deckNameLibrary[i]].push_back(i);
-      }
-       return deckIndex;
+    for (int i = 0; i < deckNameLibrary.size(); ++i) {
+            deckIndex[deckNameLibrary[i]].push_back(i);
+        }
+        return deckIndex;
     }
 };
 class accountCreation
