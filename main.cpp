@@ -3,6 +3,11 @@
 #include <string>
 #include <vector>
 #include <unordered_map>
+#include <cstring>
+#include <openssl/rand.h>
+#include <openssl/evp.h>
+#include <fstream>
+#include <openssl/buffer.h>
 using namespace std;
 
 
@@ -186,8 +191,62 @@ class accountCreation
       string password;
       string secretAnswer1;
       string secretAnswer2;
+      string myShaKey;
+    
       
     public:
+
+    vector<string> existingUsernames;
+    string inputUsername;
+
+  bool identifiedSpecialCharacter(const string & username)
+   {
+     for( char c : username)
+     {
+       if(!isalnum(c) &&!isspace(c))
+       return true;
+     }
+    if (isalnum(c) && isspace(c))
+     {
+       return false;
+     }
+  }
+  bool complexPasswordVerification(const string & password)
+   {
+     for(char c: password)
+     {
+         short capitalizedCharCounter = 0, specialCharacterCounter = 0, numberCounter = 0;
+
+     }
+    void userPasswordSelection();
+
+      while (true)
+      {
+      int questionNumber=0;
+        cout<<"Please enter a username. Please do not use any special characters."<<endl;
+        cin.ignore()
+        getline(cin.username);
+        if (username !=existingUsernames && identifiedSpecialCharacter=false)
+        {
+           questionNumber=1
+        }
+        if (username==existingUsernames || identifiedSpecialCharacter=true)
+        {
+          cout <<"Please enter a valid username entry." <<endl;
+          username.clear();
+          questionNumber=0
+        }
+        else if (questionNumber=2)
+        {
+          cout << "Please enter a standard complex password."<<endl;
+
+        }
+        
+        
+      }
+      
+
+    
   
   };
 
@@ -218,7 +277,7 @@ if(choice == 2)
 
 if (choice == 3)
 {
-  /* code */
+
 }
 
 }
